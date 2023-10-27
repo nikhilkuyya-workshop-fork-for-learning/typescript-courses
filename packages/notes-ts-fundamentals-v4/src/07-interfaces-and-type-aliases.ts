@@ -53,15 +53,17 @@ type Amount = {
 
 
 //* Inheritance in type aliases
-/*
-// type SpecialDate = Date & { getDescription(): string }
+*/
+ type SpecialDate = Date & { getDescription(): string }
+type SpecialDate2 = Date | { getDate(): string; getDescription(): string }
+const y :SpecialDate2; 
 
-// const newYearsEve: SpecialDate
-//     //                    ^?
-//     = Object.assign(
-//         new Date(),
-//         { getDescription: () => "Last day of the year" }
-//     )
+ const newyearseve: Specialdate
+    //                    ^?
+     = Object.assign(
+         new date(),
+         { getdescription: () => "last day of the year" }
+     )
 
 // newYearsEve.getDescription
 // //             ^?

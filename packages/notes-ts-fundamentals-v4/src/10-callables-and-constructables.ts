@@ -1,12 +1,29 @@
 //* Callables
+interface Foo{
+  a: boolean
+}
+interface Foo{
+ xxa: string
+}
+const y: Foo = { a: true, xxa: "test" }
 
+// interface override for the function representation
 interface TwoNumberCalculation {
   (x: number, y: number): number
+}
+interface TwoNumberCalculation {
+  (x: string) : string;
 }
 
 type TwoNumberCalc = (x: number, y: number) => number
 
-const add: TwoNumberCalculation = (a, b) => a + b
+let add: TwoNumberCalculation
+ add = (a, b) => a + b; //
+let addNew: TwoNumberCalculation;
+addNew = (a: string) => a.toString(); // 
+add(1,2); // invalid
+add("test"); // valid
+addNew("hello"); // valid
 const subtract: TwoNumberCalc = (x, y) => x - y
 
 //* `void`
